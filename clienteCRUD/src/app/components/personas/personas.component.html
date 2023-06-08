@@ -1,0 +1,102 @@
+<div class="container d-flex align-items-center justify-content-center">
+  <div class="text-center">
+    <h1>Listado de Personas</h1>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+          <th>Edad</th>
+          <th>Sexo</th>
+          <th>Clave</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let persona of personas">
+          <td>{{ persona.id }}</td>
+          <td>{{ persona.nombre }}</td>
+          <td>{{ persona.apellido }}</td>
+          <td>{{ persona.email }}</td>
+          <td>{{ persona.edad }}</td>
+          <td>{{ persona.sexo }}</td>
+          <td>{{ persona.clave }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary" (click)="buscarPersona(persona.id)">Buscar</button>
+            <button class="btn btn-sm btn-danger" (click)="eliminarPersona(persona.id)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Crear Persona</h2>
+
+    <form class="form-inline" (ngSubmit)="crearPersona(form.value)" #form="ngForm">
+      <div class="form-group mr-2">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" ngModel required>
+      </div>
+      <div class="form-group mr-2">
+        <label for="apellido">Apellido:</label>
+        <input type="text" class="form-control" id="apellido" name="apellido" ngModel required>
+      </div>
+      <div class="form-group mr-2">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" ngModel required>
+      </div>
+      <div class="form-group mr-2">
+        <label for="edad">Edad:</label>
+        <input type="number" class="form-control" id="edad" name="edad" ngModel required>
+      </div>
+      <div class="form-group mr-2">
+        <label for="sexo">Sexo:</label>
+        <input type="text" class="form-control" id="sexo" name="sexo" ngModel required>
+      </div>
+      <div class="form-group mr-2">
+        <label for="clave">Clave:</label>
+        <input type="number" class="form-control" id="clave" name="clave" ngModel required>
+      </div>
+      <button type="submit" class="btn btn-primary">Crear</button>
+    </form>
+
+    <hr>
+
+    <h2>Modificar Persona</h2>
+
+    <form class="form-inline" (ngSubmit)="modificarPersona(form.value)" #form="ngForm">
+      <div class="form-group mr-2">
+        <label for="id">ID:</label>
+        <input type="number" class="form-control" id="id" name="id" ngModel required>
+      </div>
+      <div class="form-group mr-2">
+        <label for="nombre">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" ngModel required>
+      </div>
+      <div class="form-group mr-2">
+        <label for="apellido">Apellido:</label>
+        <input type="text" class="form-control" id="apellido" name="apellido" ngModel required>
+      </div>
+      <div class="form-group mr-2">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" ngModel required>
+      </div>
+      <div class="form-group mr-2">
+        <label for="edad">Edad:</label>
+        <input type="number" class="form-control" id="edad" name="edad" ngModel required>
+      </div>
+      <div class="form-group mr-2">
+        <label for="sexo">Sexo:</label>
+        <input type="text" class="form-control" id="sexo" name="sexo" ngModel required>
+      </div>
+      <div class="form-group mr-2">
+        <label for="clave">Clave:</label>
+        <input type="number" class="form-control" id="clave" name="clave" ngModel required>
+      </div>
+      <button type="submit" class="btn btn-primary">Modificar</button>
+    </form>
+  </div>
+</div>
